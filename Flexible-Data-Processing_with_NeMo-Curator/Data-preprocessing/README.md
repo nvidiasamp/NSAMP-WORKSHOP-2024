@@ -6,6 +6,7 @@
 このプロジェクトは、NVIDIAのNeMo-Curatorツールを使用して、URLからスクレイピングされたデータを前処理することを目的としています。特定の操作環境とデータ処理のニーズに合わせて、NeMo-Curatorに必要なカスタマイズを行いました。
 
 ![データ処理のフロー](https://github.com/nvidiasamp/5min_RAG/blob/shunmei/Data-preprocessing/NeMo-Curator.png)
+
 *画像の出典 [NeMo-Curator GitHub リポジトリ](https://github.com/NVIDIA/NeMo-Curator)*
 
 ## ディレクトリ構成
