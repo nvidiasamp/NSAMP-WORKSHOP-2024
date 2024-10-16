@@ -1,0 +1,23 @@
+# 通用设置
+output_folder: '/app/data/output/'  # すべての出力ファイルを保存するフォルダ
+log_filename: 'scrape_log.log'  # ログファイルの名前
+processed_urls_filename: 'processed_urls.txt'  # 処理済みのURLを記録するファイル
+max_workers: 10  # 並列処理に使用するワーカースレッドの最大数
+timeout: 30  # 各URLに対するリクエストのタイムアウト時間（秒）
+
+# creat_txt.py 特定设置
+urls_directory: '/app/data/url'  # URLリストが保存されているディレクトリ
+output_filename: 'links.txt'  # 抽出されたリンクを保存するテキストファイルの名前
+extract_links_log_filename: 'extract_links_log.log'  # リンク抽出プロセスのログファイル名
+headers:  # リクエスト時に使用するHTTPヘッダー
+  User-Agent: 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36'
+ignored_domains:  # 無視するドメインリスト（これらのドメインのリンクは抽出されない）
+  - 'x.com'
+  - 'instagram.com'
+  - 'line.me'
+  - 'youtube.com'
+  - 'facebook.com'
+
+# download_url_data.py 特定设置
+url_file: '/app/data/output/links.txt'  # リンクを保存したファイルのパス
+data_output_filename: 'data.jsonl'  # ダウンロードされたデータを保存するJSONLファイルの名前

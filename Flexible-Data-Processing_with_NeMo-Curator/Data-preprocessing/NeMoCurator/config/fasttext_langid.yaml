@@ -1,0 +1,10 @@
+# 入力フィールドに指定されたテキストに対してフィルターを適用します。
+# FastText 言語識別モデルを使用して、テキストの言語を識別し、そのスコアをログに記録します。
+
+input_field: text  # 処理する入力フィールド（テキストデータ）
+
+filters:
+  - name: nemo_curator.filters.classifier_filter.FastTextLangId  # FastText 言語識別フィルター
+    log_score: True  # 言語識別のスコアをログに記録する設定
+    params:
+      model_path: /workspace/models/Language_identification/lid.176.bin  # 言語識別モデルのパス
