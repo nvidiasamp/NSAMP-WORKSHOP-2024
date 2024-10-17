@@ -1,4 +1,4 @@
-# Retrieval-Augmented Generation (RAG)
+# RAGの仕組みからデプロイまで
 
 ## 概要
 - **Retrieval-Augmented Generation (RAG)**: 情報検索と生成の2つのAI技術を組み合わせたハイブリッドモデル。
