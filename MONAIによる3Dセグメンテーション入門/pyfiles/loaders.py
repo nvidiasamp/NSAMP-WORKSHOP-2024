@@ -14,12 +14,12 @@ from monai.transforms import (
 )
 
 import torch
-from monai.data import DataLoader,load_decathlon_datalist, Dataset
+from monai.data import DataLoader,load_decathlon_datalist, CacheDataset, Dataset
 
 
 
 
-def make_loaders(voxel_size=(1.5,1.5,1.5),image_size=(128,256, 256), patch_size=(96,96,96), samples=2, 
+def make_loaders(voxel_size=(1.5,1.5,1.5),image_size=(128,256, 256), patch_size=(96,96,96), samples=2, cache_rate=0,
                  num_workers=4,dataset_path= './data_list_pyfile.json',seed=42):
     train_transforms = Compose([
                                 LoadImaged(keys=["image", "label"]),
@@ -86,7 +86,7 @@ def make_loaders(voxel_size=(1.5,1.5,1.5),image_size=(128,256, 256), patch_size=
     train_files = load_decathlon_datalist(dataset_path, True, "training")
     val_files = load_decathlon_datalist(dataset_path, True, "testing")
 
-    train_ds = Dataset(data=train_files, transform=train_transforms)
+    train_ds = CacheDataset(data=train_files, transform=train_transforms,cache_rate=cache_rate)
     val_ds = Dataset(data=val_files, transform=val_transforms)
     train_loader = DataLoader(train_ds, num_workers=num_workers, batch_size=1, shuffle=True)
     val_loader = DataLoader(val_ds, num_workers=num_workers, batch_size=1)

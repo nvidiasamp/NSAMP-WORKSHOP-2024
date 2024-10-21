@@ -32,6 +32,7 @@ if __name__ == "__main__":
     parser.add_argument("--val_interval", default=2, type=int, help="validation interval")
     parser.add_argument("--parallel", action='store_true', help="multi gpu processing or not")
     parser.add_argument("--pretrain", action='store_true', help="use pretrained model")
+    parser.add_argument("--cache_rate", default=0, type=float, help="cache rate for train dataset")
     args = parser.parse_args()
 
 
@@ -39,7 +40,8 @@ if __name__ == "__main__":
     RAND_CROP_SIZE = (96,96,96)  
     set_seed(args.seed)
     
-    train_ds, val_ds, train_loader, val_loader = make_loaders(args.voxel_size,args.image_size,RAND_CROP_SIZE,args.num_sumples,args.num_workers,dataset_path=args.dataset_jsonpath,seed=args.seed)
+    train_ds, val_ds, train_loader, val_loader = make_loaders(args.voxel_size,args.image_size,RAND_CROP_SIZE,args.num_sumples,args.cache_rate,
+                                                              args.num_workers,dataset_path=args.dataset_jsonpath,seed=args.seed)
     
     
     MODEL = SwinUNETR(
