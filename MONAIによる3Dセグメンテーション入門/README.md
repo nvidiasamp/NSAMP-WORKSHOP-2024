@@ -12,7 +12,7 @@ MONAIによる3Dセグメンテーションの基本的な流れを紹介しま�
 - NVIDIA driver: 450.236.01
 
 ###  GPU要件（使用したGPU）
-- Tesla V100 32GB × 2
+- Tesla V100 32GB
 
 ## 使用したデータ
 - 公式ホームページ：[KiTS19 Grand Challenge](https://kits19.grand-challenge.org/)
