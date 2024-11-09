@@ -3,7 +3,7 @@
 ## 概要
 
 RAGで生成した回答に対して、NVIDIAが提供するモデル(nemotron-4-340b-reward)を用いて性能評価を行う
-src/evaluate_rag.ipynbを実行することで性能評価のデモが可能
+src/evaluate_rag.ipynbを実行することでJaQuADを用いた性能評価のデモが可能
 
 ## 実行環境
 
