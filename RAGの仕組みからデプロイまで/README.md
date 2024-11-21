@@ -69,4 +69,4 @@ streamlit run examples/5_mins_rag_no_gpu/main.py
 ```
 
 ## Step 6: Test the Deployment
-ウェブ・ブラウザで http://localhost:8501/ にアクセスして、デプロイされたサンプルをテストする。
+ウェブ・ブラウザで表示されたURLにアクセスして、デプロイされたサンプルをテストする。
